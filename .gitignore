@@ -14,3 +14,8 @@ marian/__pycache__/
 accounts/__pycache__/
 
 accounts/migrations/__pycache__/
+/identifier.sqlite
+
+pickups/__pycache__/
+
+pickups/migrations/__pycache__/

@@ -9,6 +9,8 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
+import datetime
+
 from marian import config_vars
 
 from pathlib import Path
@@ -41,7 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'accounts.apps.AccountsConfig'
+    'accounts.apps.AccountsConfig',
+    'pickups.apps.PickupsConfig'
 ]
 
 MIDDLEWARE = [
@@ -66,6 +69,10 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.BasicAuthentication',
     ),
+}
+
+JWT_AUTH = {
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(days=3)
 }
 
 CORS_ORIGIN_WHITELIST = (
